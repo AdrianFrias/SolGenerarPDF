@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Principal</title>
+</head>
+<body>
+    <div >
+        @if(TempData["ERROR"]!=null)
+            {
+                <h2>Ocurrio un error:@TempData["ERROR"]</h2>
+            }
+        <h1>Captura de Datos</h1>
+        <form method="post" action="/Home/Imprimir">
+            <label>Nombre(s)</label>
+            @Html.TextBox("nombre", null)
+            <br />
+            <label>Apellido Paterno</label>
+            @Html.TextBox("apPaterno", null)
+            <br />
+            <label>Apellido Materno</label>
+            @Html.TextBox("apMaterno", null)
+            <br />
+            <label>Edad</label>
+            @Html.TextBox("edad", null, new { type = "number" })
+            <br />
+            <label>Correo</label>
+            @Html.TextBox("correo", null, new { type = "email", placeholder = "Ingresa tu email" })
+            <br />
+            <input type="submit" value="Imprimir" />
+        </form>
+        @*<input type="nu" />*@
+
+    </div>
+</body>
+</html>
